@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org">
+<head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta charset="UTF-8">
+    <title>Login page</title>
+</head>
+<body>
+
+<div class="container">
+    <div class="row">
+        <div class="d-md-block col-3 mx-auto">
+            <br>
+            <form name="f" method="post" action="/process_login">
+                <h4 class="form-signin-heading fw-bold py-2">Please sign in</h4>
+                <div class="form-floating">
+                    <input type="text" name="username" class="form-control" id="username" placeholder="Email address">
+                    <label for="username">Email</label>
+                </div>
+                <div class="form-floating">
+                    <input type="password" name="password" class="form-control" id="password" placeholder="Password">
+                    <label for="password">Password</label>
+                </div>
+                <div class="mb-2 bd-highlight"></div>
+                <button type="submit" class="btn btn-lg btn-primary btn-block form-control">Sign in</button>
+                <div th:if="${param.error}" class="alert alert-danger text-center" role="alert">
+                    Incorrect email or password!
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
+</body>
+</html>
