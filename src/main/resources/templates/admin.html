@@ -185,9 +185,8 @@
                                                                             multiple
                                                                             size="2" name="roles" required>
                                                                         <option th:each="role:${roles}"
-                                                                                th:value="${role.id}"
-                                                                                th:text="${role.name}"
-                                                                                th:field="*{roles}">
+                                                                                th:value="${role.id}" th:selected="${role.name}"
+                                                                                th:text="${role.name}">
                                                                         </option>
                                                                     </select>
                                                                 </div>
