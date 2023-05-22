@@ -178,15 +178,16 @@
                                                                            type="password"
                                                                            th:name="password"
                                                                            th:value="${user.password}"
-                                                                            readonly>
+                                                                           readonly>
                                                                     <label for="userRoleEdit"
                                                                            class="container-fluid fw-bold">Role</label>
                                                                     <select id="userRoleEdit" class="form-control mb-3"
-                                                                            multiple
-                                                                            size="2" name="roles" required>
-                                                                        <option th:each="role:${roles}"
-                                                                                th:value="${role.id}" th:selected="${role.name}"
-                                                                                th:text="${role.name}">
+                                                                             name="roles" th:value="${user.roles}"
+                                                                            multiple size="2" required>
+                                                                        <option th:each=" role: ${roles}"
+                                                                        th:value="${role.id}"
+                                                                                th:selected="${#lists.contains(user.roles, role)}"
+                                                                        th:text="${role.name}">
                                                                         </option>
                                                                     </select>
                                                                 </div>
